@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:viewBindingIgnore="false">
+
+    <ImageView
+        android:id="@+id/head"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/head"
+        android:contentDescription="@string/head_picture"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/collectionText"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/news_collection"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/head"
+        app:layout_constraintTop_toBottomOf="@+id/head"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/collectionTextText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/collectionText"
+        app:layout_constraintLeft_toLeftOf="@id/collectionText"
+        app:layout_constraintRight_toRightOf="@id/collectionText"
+        android:layout_marginTop="10dp"
+        android:text="@string/News"
+        android:textColor="@color/black"
+        />
+
+    <Button
+        android:id="@+id/collectionVideo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/video_collection"
+        app:layout_constraintLeft_toRightOf="@id/head"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/collectionText"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/collectionVideoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/collectionVideo"
+        app:layout_constraintLeft_toLeftOf="@+id/collectionVideo"
+        app:layout_constraintRight_toRightOf="@+id/collectionVideo"
+        android:layout_marginTop="10dp"
+        android:text="@string/collect_video"
+        android:textColor="@color/black"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ENews</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="first">首页</string>
+    <string name="video">视频</string>
+    <string name="inf">个人</string>
+    <string name="News">收藏/新闻</string>
+    <string name="collect_video">收藏/视频</string>
+    <string name="head_picture">head_picture</string>
+    <string name="headLine">头条</string>
+    <string name="entertainment">娱乐</string>
+    <string name="sport">体育</string>
+    <string name="militaryScience">军事</string>
+    <string name="financeEconomics">财经</string>
+    <string name="game">游戏</string>
+    <string name="head_line_image">放新闻图片</string>
+    <string name="video_image">展示视频图片</string>
+</resources>
