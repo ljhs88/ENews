@@ -1,4 +1,4 @@
-package com.example.enews
+package com.example.enews.util
 
 import android.content.Context
 import android.widget.Toast

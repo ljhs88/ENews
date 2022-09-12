@@ -8,9 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
-import androidx.databinding.DataBindingUtil
-import com.example.enews.R
-import com.example.enews.databinding.FragmentHeadLineBinding
 import com.example.enews.databinding.FragmentWebViewBinding
 
 class webView : Fragment() {
@@ -28,8 +25,7 @@ class webView : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = DataBindingUtil.inflate(inflater,
-            R.layout.fragment_web_view, container, false)
+        _binding = FragmentWebViewBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[WebViewViewModel::class.java]
         return binding.root
     }

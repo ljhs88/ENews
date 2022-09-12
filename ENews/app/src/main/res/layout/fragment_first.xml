@@ -56,17 +56,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/game" />
 
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/militaryScience" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/game" />
-
-
         </com.google.android.material.tabs.TabLayout>
 
     </LinearLayout>

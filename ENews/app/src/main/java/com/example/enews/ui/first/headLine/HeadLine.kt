@@ -6,14 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.enews.R
 import com.example.enews.bean.headLine.T1348647853363
 import com.example.enews.databinding.FragmentHeadLineBinding
 
-class headLine : Fragment() {
+class headLine() : Fragment() {
     companion object {
         fun newInstance() = headLine()
     }
@@ -26,11 +24,8 @@ class headLine : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_head_line, container, false)
+        _binding = FragmentHeadLineBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this).get(HeadLineViewModel::class.java)
-        binding.viewModel = viewModel
-        binding.lifecycleOwner = viewLifecycleOwner
 
         viewModel.data.observe(viewLifecycleOwner) {
             val items = viewModel.data.value?.T1348647853363
@@ -47,6 +42,11 @@ class headLine : Fragment() {
             recyclerView.layoutManager = manager
         }
         return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

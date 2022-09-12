@@ -3,6 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/E/ENews/app/src/main/res/layout/fragment_collect_video.xml" value="0.1838768115942029" />
+        <entry key="..\:/E/ENews/app/src/main/res/layout/fragment_entertainment.xml" value="0.1838768115942029" />
+        <entry key="..\:/E/ENews/app/src/main/res/layout/fragment_finance_economics.xml" value="0.1838768115942029" />
+        <entry key="..\:/E/ENews/app/src/main/res/layout/fragment_first.xml" value="0.16170534813319878" />
+        <entry key="..\:/E/ENews/app/src/main/res/layout/fragment_head_line.xml" value="0.15520833333333334" />
+        <entry key="..\:/E/ENews/app/src/main/res/layout/fragment_information.xml" value="0.1838768115942029" />
+        <entry key="..\:/E/ENews/app/src/main/res/layout/fragment_military_science.xml" value="0.1838768115942029" />
+        <entry key="..\:/E/ENews/app/src/main/res/layout/fragment_sport.xml" value="0.1838768115942029" />
+        <entry key="..\:/E/ENews/app/src/main/res/layout/fragment_video.xml" value="0.15520833333333334" />
+        <entry key="..\:/E/ENews/app/src/main/res/layout/fragment_video_player.xml" value="0.15520833333333334" />
+        <entry key="..\:/E/ENews/app/src/main/res/layout/fragment_web_view.xml" value="0.15520833333333334" />
+        <entry key="..\:/E/ENews/app/src/main/res/layout/item_head_line.xml" value="0.1838768115942029" />
         <entry key="..\:/ENews/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2075" />
         <entry key="..\:/ENews/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/ENews/app/src/main/res/layout/fragment_blank.xml" value="0.21467391304347827" />

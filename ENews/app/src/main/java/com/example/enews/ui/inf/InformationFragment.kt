@@ -16,7 +16,7 @@ class InformationFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater,
-                              container: ViewGroup?, savedInstanceState: Bundle?): View? {
+                              container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentInformationBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
@@ -25,11 +25,11 @@ class InformationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.collectionText.setOnClickListener {
-            var navController = findNavController()
+            val navController = findNavController()
             navController.navigate(R.id.action_informationFragment_to_collectTextFragment)
         }
         binding.collectionVideo.setOnClickListener {
-            var navController = findNavController()
+            val navController = findNavController()
             navController.navigate(R.id.action_informationFragment_to_collectVideoFragment)
         }
     }

@@ -22,7 +22,6 @@ class VideoPlayerFragment : Fragment() {
     ): View? {
         viewModel = ViewModelProvider(this).get(VideoPlayerViewModel::class.java)
         return inflater.inflate(R.layout.fragment_video_player, container, false)
-
     }
 
 }

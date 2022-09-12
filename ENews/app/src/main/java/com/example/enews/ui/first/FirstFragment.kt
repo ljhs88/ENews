@@ -7,8 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.enews.databinding.FragmentFirstBinding
+import com.example.enews.ui.first.FE.FinanceEconomics
+import com.example.enews.ui.first.MS.militaryScience
 import com.example.enews.ui.first.etm.entertainment
+import com.example.enews.ui.first.game.game
 import com.example.enews.ui.first.headLine.headLine
+import com.example.enews.ui.first.sport.sport
 import com.google.android.material.tabs.TabLayoutMediator
 
 class FirstFragment : Fragment() {
@@ -31,7 +35,7 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         // 滑动时同步
         binding.viewPager2.adapter = object : FragmentStateAdapter(this) {
-            override fun getItemCount() = 8
+            override fun getItemCount() = 6
 
             override fun createFragment(position: Int)=
                 when(position) {
@@ -40,8 +44,6 @@ class FirstFragment : Fragment() {
                     2 -> sport()
                     3 -> FinanceEconomics()
                     4 -> militaryScience()
-                    5 -> game()
-                    6 -> militaryScience()
                     else -> game()
                 }
         }
@@ -54,8 +56,6 @@ class FirstFragment : Fragment() {
                 2 -> tab.text = "体育"
                 3 -> tab.text = "财经"
                 4 -> tab.text = "军事"
-                5 -> tab.text = "游戏"
-                6 -> tab.text = "财经"
                 else -> tab.text = "游戏"
             }
         }.attach()

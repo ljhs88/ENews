@@ -1,4 +1,4 @@
-package com.example.enews.ui.first.headLine
+package com.example.enews.ui.first.MS
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,17 +8,18 @@ import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.enews.R
-import com.example.enews.util.ToastUtil
-import com.example.enews.bean.headLine.T1348647853363
+import com.example.enews.bean.MS.BAI67OGGwangning
 import com.example.enews.databinding.ItemHeadLineBinding
+import com.example.enews.databinding.ItemVideoBinding
+import com.example.enews.util.ToastUtil
 
-class MyAdapter(
-    private var list: List<T1348647853363>,
+class MSAdapter(
+    private var list: List<BAI67OGGwangning>,
     private var context: Context,
-    private var navController: NavController) :
-    RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+    private var navController: NavController
+) : RecyclerView.Adapter<MSAdapter.ViewHolder>() {
 
-    inner class ViewHolder(binding: ItemHeadLineBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(binding: ItemVideoBinding) : RecyclerView.ViewHolder(binding.root) {
         val image = binding.image
         val title = binding.title
         val author = binding.author
@@ -26,7 +27,7 @@ class MyAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemHeadLineBinding
+        val binding = ItemVideoBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
@@ -39,7 +40,7 @@ class MyAdapter(
         buffer.apply {
             append(bean.source)
             append("  ")
-            append(bean.mtime.substring(5))
+            append(bean.ptime.substring(5))
         }
         holder.title.text = bean.title
         holder.author.text = buffer.toString()
