@@ -12,14 +12,12 @@ import com.example.enews.databinding.FragmentInformationBinding
 class InformationFragment : Fragment() {
 
     private var _binding: FragmentInformationBinding? = null
-
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentInformationBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/back_color"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:viewBindingIgnore="false">
 
@@ -16,7 +17,7 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="30dp"
             app:tabBackground="@color/white"
             app:tabGravity="fill"
             app:tabIndicatorHeight="0dp"

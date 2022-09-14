@@ -1,7 +1,12 @@
 package com.example.enews
 
+import android.app.Activity
+import android.graphics.Color
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.view.WindowManager
 import androidx.core.view.forEachIndexed
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LiveData
@@ -29,6 +34,10 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         val navController = navHostFragment.navController
         setupWithNavController(binding.navView, navController)
+
+
     }
+
+
 
 }

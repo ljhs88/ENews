@@ -7,11 +7,15 @@ import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
 import com.example.enews.R
 import com.example.enews.bean.entertainment.T1348648517839
+import com.example.enews.bean.inf.CollectTextBean
 import com.example.enews.bean.sport.T1348649079062
 import com.example.enews.databinding.ItemHeadLineBinding
 import com.example.enews.util.ToastUtil
+import com.google.gson.Gson
 
 class sportAdapter(
     private var list: List<T1348649079062>,
@@ -35,10 +39,14 @@ class sportAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val bean = list[position]
         val imgUrl = bean.imgsrc
-        Glide.with(context).load(imgUrl).into(holder.image)
+        val author = bean.source
+        Glide.with(context)
+            .load(imgUrl)
+            .apply(RequestOptions.bitmapTransform(RoundedCorners(5)))
+            .into(holder.image)
         val buffer = StringBuffer()
         buffer.apply {
-            append(bean.source)
+            append(author)
             append("  ")
             append(bean.mtime.substring(5))
         }
@@ -47,7 +55,9 @@ class sportAdapter(
         holder.cardView.setOnClickListener {
             bean.apply {
                 if (url != null && url != "") {
-                    val bundle = bundleOf("url" to url)
+                    val collectBean = CollectTextBean(title, imgUrl, author, url)
+                    val collectString = Gson().toJson(collectBean)
+                    val bundle = bundleOf("bean" to collectString)
                     navController.navigate(R.id.action_video_to_webView, bundle)
                 } else {
                     ToastUtil.showMsg(context, "无详细文章，敬请期待")
@@ -59,4 +69,5 @@ class sportAdapter(
     override fun getItemCount(): Int {
         return list.size
     }
+
 }

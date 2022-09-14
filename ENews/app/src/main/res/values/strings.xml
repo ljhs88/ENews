@@ -16,4 +16,5 @@
     <string name="game">游戏</string>
     <string name="head_line_image">放新闻图片</string>
     <string name="video_image">展示视频图片</string>
+    <string name="toolbar_text">ENews</string>
 </resources>

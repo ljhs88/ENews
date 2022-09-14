@@ -36,7 +36,6 @@ class militaryScience : Fragment() {
             val recyclerList = viewModel.data.value?.BAI67OGGwangning
             setRecyclerView(recyclerList)
         }
-
         return binding.root
     }
 

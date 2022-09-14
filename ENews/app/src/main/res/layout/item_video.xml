@@ -4,11 +4,11 @@
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="15dp"
+    android:layout_marginTop="@dimen/margin_top"
     android:layout_marginStart="10dp"
     android:layout_marginEnd="10dp"
     app:cardCornerRadius="@dimen/card_corner_radius"
-    app:cardBackgroundColor="@color/white"
+    app:cardElevation="0dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,6 +20,7 @@
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="180dp"
+
             android:contentDescription="@string/video_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +33,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:lines="2"
+            android:maxLines="2"
             android:text="新闻哇哇哇哇呜呜呜"
             android:textColor="@color/black"
             android:textSize="@dimen/title_size"
@@ -48,6 +49,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:layout_marginTop="2dp"
             android:text="新闻新闻"
             android:textColor="@color/text_color"
             android:textSize="@dimen/author_text_size"

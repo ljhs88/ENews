@@ -53,7 +53,7 @@
     </fragment>
     <fragment
         android:id="@+id/collectTextFragment"
-        android:name="com.example.enews.ui.inf.CollectTextFragment"
+        android:name="com.example.enews.ui.inf.collectText.CollectTextFragment"
         android:label="CollectTextFragment"
         tools:layout="@layout/fragment_collect_text">
         <action
@@ -63,15 +63,29 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_collectTextFragment_to_webView"
+            app:destination="@id/webView"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/collectVideoFragment"
-        android:name="com.example.enews.ui.inf.CollectVideoFragment"
+        android:name="com.example.enews.ui.inf.collectVideo.CollectVideoFragment"
         android:label="CollectVideoFragment"
         tools:layout="@layout/fragment_collect_video">
         <action
             android:id="@+id/action_collectVideoFragment_to_informationFragment"
             app:destination="@id/inf"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_collectVideoFragment_to_webView"
+            app:destination="@id/webView"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
@@ -83,8 +97,36 @@
         android:label="fragment_web_view"
         tools:layout="@layout/fragment_web_view" >
         <argument
-            android:name="url"
+            android:name="bean"
             app:argType="string"
             android:defaultValue=" " />
+        <action
+            android:id="@+id/action_webView_to_first"
+            app:destination="@id/first"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_webView_to_video"
+            app:destination="@id/video"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_webView_to_collectVideoFragment"
+            app:destination="@id/collectVideoFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_webView_to_collectTextFragment"
+            app:destination="@id/collectTextFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 </navigation>

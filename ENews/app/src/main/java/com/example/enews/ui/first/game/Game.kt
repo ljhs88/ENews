@@ -74,7 +74,7 @@ class game : Fragment() {
                 if (holder != null&&data!=null) {
                     Glide.with(holder.itemView)
                         .load(data.imgsrc)
-                        .apply(RequestOptions.bitmapTransform(RoundedCorners(30)))
+                        .apply(RequestOptions.bitmapTransform(RoundedCorners(5)))
                         .into(holder.imageView)
                     holder.imageView.setOnClickListener {
                         val url = data.url
