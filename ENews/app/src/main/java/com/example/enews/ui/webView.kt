@@ -27,6 +27,10 @@ class webView : Fragment() {
 
     private lateinit var viewModel: WebViewViewModel
 
+    private lateinit var bean: CollectTextBean2
+    // 0-未收藏 1-收藏
+    private var COLLECT_STATE = 0
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,18 +44,31 @@ class webView : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val collectJson = arguments?.getString("bean")
-        val bean = Gson().fromJson(collectJson, CollectTextBean2::class.java)
+        bean = Gson().fromJson(collectJson, CollectTextBean2::class.java)
         binding.webView.loadUrl(bean.url)
         binding.webView.settings.javaScriptEnabled = true
         binding.webView.webViewClient = WebViewClient()
 
         binding.collect.setOnClickListener {
-            val list: MutableList<CollectTextBean2> =
-                ShareUtil.getDataList<CollectTextBean2>(requireContext(),"collectList")
+            val picture : Int
+            if(COLLECT_STATE == 0) {
+                picture = R.drawable.collection2
+                COLLECT_STATE = 1
+            } else {
+                picture =  R.drawable.collection
+                COLLECT_STATE = 0
+            }
+            binding.collect.setBackgroundResource(picture)
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if (COLLECT_STATE == 1) {
+            val list = ShareUtil.getDataList(requireContext(),"collectList")
                         as MutableList<CollectTextBean2>
             list.add(bean)
             ShareUtil.setDataList(requireContext(),"collectList", list)
-            binding.collect.setBackgroundResource(R.drawable.collection2)
         }
     }
 

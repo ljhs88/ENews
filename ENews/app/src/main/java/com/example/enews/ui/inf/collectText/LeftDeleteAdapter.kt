@@ -1,8 +1,8 @@
 package com.example.enews.ui.inf.collectText
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
-import android.view.RoundedCorner
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
@@ -13,15 +13,16 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.example.enews.R
 import com.example.enews.bean.inf.CollectTextBean
+import com.example.enews.bean.inf.CollectTextBean2
 import com.example.enews.databinding.ItemCollectBinding
 import com.example.enews.util.ToastUtil
 import com.google.gson.Gson
 
 class LeftDeleteAdapter(
-    private var list: List<CollectTextBean>,
+    private var list: List<CollectTextBean2>,
     private var context: Context,
     private var navController: NavController
-) : RecyclerView.Adapter<LeftDeleteAdapter.ViewHolder>(), LeftDeleteRecyclerView.OnItemClickListener {
+) : RecyclerView.Adapter<LeftDeleteAdapter.ViewHolder>() {
 
     inner class ViewHolder(binding: ItemCollectBinding) : RecyclerView.ViewHolder(binding.root){
         val title = binding.title
@@ -63,10 +64,4 @@ class LeftDeleteAdapter(
     }
 
     override fun getItemCount() = list.size
-
-    override fun onClick(view: View?, position: Int) {
-        notifyItemRemoved(position)
-    }
-
-
 }

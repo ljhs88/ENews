@@ -4,6 +4,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.enews.bean.MS.MSBean
 import com.example.enews.bean.inf.CollectTextBean
+import com.example.enews.bean.inf.CollectTextBean2
+import com.example.enews.util.ShareUtil
 import com.google.gson.Gson
 import org.jsoup.Jsoup
 import kotlin.concurrent.thread

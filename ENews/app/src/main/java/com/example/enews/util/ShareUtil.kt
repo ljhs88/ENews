@@ -2,6 +2,7 @@ package com.example.enews.util
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.example.enews.bean.inf.CollectTextBean2
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
@@ -16,7 +17,7 @@ object ShareUtil {
         return pref!!
     }
 
-    fun <T> setDataList(context: Context, key: String?, datalist: List<T>?) {
+    fun setDataList(context: Context, key: String?, datalist: List<CollectTextBean2>?) {
         if (null == datalist || datalist.isEmpty()) return
         val gson = Gson()
         //转换成json数据，再保存
@@ -27,12 +28,12 @@ object ShareUtil {
         editor.apply()
     }
 
-    fun <T> getDataList(context: Context, key: String?): List<T>? {
-        var datalist: List<T> = ArrayList()
+    fun getDataList(context: Context, key: String?): List<CollectTextBean2>? {
+        var datalist: List<CollectTextBean2> = ArrayList()
         val pref = getPref(context)
         val strJson: String = pref.getString(key, null) ?: return datalist
         val gson = Gson()
-        datalist = gson.fromJson(strJson, object : TypeToken<List<T>?>() {}.type)
+        datalist = gson.fromJson(strJson, object : TypeToken<List<CollectTextBean2>?>() {}.type)
         return datalist
     }
 }

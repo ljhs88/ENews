@@ -56,7 +56,6 @@ class MyAdapter(
                 if (url != null && url != "") {
                     val collectBean = CollectTextBean(title, imgUrl, author, url)
                     val collectString = Gson().toJson(collectBean)
-                    Log.d("123", collectString)
                     val bundle = bundleOf("bean" to collectString.toString())
                     navController.navigate(R.id.action_video_to_webView, bundle)
                 } else {
