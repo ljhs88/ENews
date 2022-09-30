@@ -10,4 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/not_collect"
+        android:gravity="center"
+        android:textSize="@dimen/title_size"
+        android:textColor="@color/text_color"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -67,6 +67,7 @@ class LeftDeleteRecyclerView(context: Context, attrs: AttributeSet?) :
                 val viewHolder: LeftDeleteAdapter.ViewHolder =
                     getChildViewHolder(view) as LeftDeleteAdapter.ViewHolder
                 itemRoot = viewHolder.cardView.parent as ConstraintLayout?
+                if(itemRoot == null) return false;
                 itemRootLast = itemRoot
                 position = viewHolder.adapterPosition
                 if (mOnItemClickListener != null) {

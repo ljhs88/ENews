@@ -36,6 +36,7 @@ android {
 
 dependencies {
 
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.9.1'
     // 爬
     implementation 'org.jsoup:jsoup:1.13.1'
     //coroutines
