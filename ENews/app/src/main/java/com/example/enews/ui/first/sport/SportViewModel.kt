@@ -15,14 +15,12 @@ import okhttp3.ResponseBody
 
 class SportViewModel : ViewModel() {
 
-    init {
-        getContent()
-    }
+    init {}
 
     private val _data = MutableLiveData<sportBean>()
     val data : LiveData<sportBean> = _data
 
-    private fun getContent() {
+    public fun getContent() {
         service.getSport()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

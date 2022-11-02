@@ -26,7 +26,7 @@ class headLine() : Fragment() {
     ): View {
         _binding = FragmentHeadLineBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this).get(HeadLineViewModel::class.java)
-
+        viewModel.getContent()
         viewModel.data.observe(viewLifecycleOwner) {
             val items = viewModel.data.value?.T1348647853363
             val recyclerView = binding.recyclerview
@@ -44,8 +44,8 @@ class headLine() : Fragment() {
         return binding.root
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
     }
 

@@ -20,14 +20,10 @@ class VideoViewModel : ViewModel() {
     private val _data = MutableLiveData<VideoBean>()
     val data: LiveData<VideoBean> = _data
 
-    init {
-        thread {
-            videoRtf()
-        }
-    }
+    init {}
 
     @SuppressLint("SimpleDateFormat")
-    private fun videoRtf() {
+    fun videoRtf() {
         val simpleDateFormat = SimpleDateFormat("HH:mm:ss")
         var s = simpleDateFormat.format(Date())
         s = s.substring(6,s.length)

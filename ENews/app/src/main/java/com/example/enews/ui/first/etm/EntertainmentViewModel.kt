@@ -17,23 +17,12 @@ import org.jsoup.Jsoup
 import kotlin.concurrent.thread
 
 class EntertainmentViewModel() : ViewModel() {
-    init {
-        /*thread {
-            getContent()
-        }*/
-        getContent()
-    }
+    init {}
 
     private val _data = MutableLiveData<etmBean>()
     val data : LiveData<etmBean> = _data
 
-    private fun getContent() {
-        /*val url = "https://c.3g.163.com/nc/article/list/T1348648517839/0-20.html"
-        val content = Jsoup.connect(url).ignoreContentType(true).execute().body()
-        val bean = Gson().fromJson(content, etmBean::class.java)
-        Log.d("123", content)
-        Log.d("123", bean.T1348648517839.toString())
-        _data.postValue(bean)*/
+    fun getContent() {
         service.getEtm()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

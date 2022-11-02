@@ -18,11 +18,9 @@ class HeadLineViewModel : ViewModel() {
     private val _data = MutableLiveData<headLineBean>()
     val data: LiveData<headLineBean> = _data
 
-    init {
-        getContent()
-    }
+    init {}
 
-    private fun getContent() {
+    fun getContent() {
         service.getHeadLine()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

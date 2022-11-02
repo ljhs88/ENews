@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.enews.databinding.FragmentVideoBinding
+import kotlin.concurrent.thread
 
 class VideoFragment : Fragment() {
 
@@ -28,7 +29,9 @@ class VideoFragment : Fragment() {
     ): View {
         _binding = FragmentVideoBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[VideoViewModel::class.java]
-
+        thread {
+            viewModel.videoRtf()
+        }
         val recyclerView = binding.recyclerview
         val manager = LinearLayoutManager(
             context,

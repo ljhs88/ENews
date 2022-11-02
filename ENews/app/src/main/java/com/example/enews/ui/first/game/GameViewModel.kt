@@ -10,16 +10,12 @@ import org.jsoup.Jsoup
 import kotlin.concurrent.thread
 
 class GameViewModel : ViewModel() {
-    init {
-        thread {
-            getContent()
-        }
-    }
+    init {}
 
     private val _data = MutableLiveData<gameBean>()
     val data : LiveData<gameBean> = _data
 
-    private fun getContent() {
+    fun getContent() {
         val url = "https://3g.163.com/touch/reconstruct/article/list/BAI6RHDKwangning/0-20.html"
         var content = Jsoup.connect(url).ignoreContentType(true).execute().body()
         content = content.substring(9, content.length-1)

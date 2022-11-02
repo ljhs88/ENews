@@ -21,6 +21,7 @@ import com.example.enews.util.ToastUtil
 import com.youth.banner.adapter.BannerImageAdapter
 import com.youth.banner.holder.BannerImageHolder
 import com.youth.banner.indicator.CircleIndicator
+import kotlin.concurrent.thread
 
 class FinanceEconomics : Fragment() {
 
@@ -40,7 +41,9 @@ class FinanceEconomics : Fragment() {
         _binding = FragmentEntertainmentBinding.inflate(
             inflater, container, false)
         viewModel = ViewModelProvider(this).get(FinanceEconomicsViewModel::class.java)
-
+        thread {
+            viewModel.getContent()
+        }
         viewModel.data.observe(viewLifecycleOwner){
             val recyclerList = viewModel.data.value?.BA8EE5GMwangning
             val bannerList = viewModel.data.value?.BA8EE5GMwangning?.subList(0 ,5)

@@ -12,16 +12,12 @@ import kotlin.concurrent.thread
 
 class collectTextViewModel : ViewModel() {
 
-    init {
-        thread {
-            getContent()
-        }
-    }
+    init {}
 
     private val _data = MutableLiveData<List<CollectTextBean>>()
     val data : MutableLiveData<List<CollectTextBean>> = _data
 
-    private fun getContent() {
+    public fun getContent() {
         val url = "https://3g.163.com/touch/reconstruct/article/list/BAI67OGGwangning/0-10.html"
         var content = Jsoup.connect(url).ignoreContentType(true).execute().body()
         content = content.substring(9, content.length-1)

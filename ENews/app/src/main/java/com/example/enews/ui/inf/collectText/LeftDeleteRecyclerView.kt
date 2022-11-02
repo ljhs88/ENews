@@ -18,21 +18,16 @@ class LeftDeleteRecyclerView(context: Context, attrs: AttributeSet?) :
 
     //item的根布局
     private var itemRoot: ConstraintLayout? = null
-
     //上一次滑动的Item根布局
     private var itemRootLast: ConstraintLayout? = null
-
     //上次X轴的滑动坐标
     private var mlastX = 0
-
     //上次Y轴的滑动坐标
     private var mlastY = 0
-
     //滑动的最大距离
     private val MAX_WIDTH = 100
     private var mContext: Context? = null
     private var mScroller: Scroller? = null
-
     // 0-关闭 1-打开
     private var deleteState1 = 0
     private var deleteState2 = 0
@@ -49,25 +44,22 @@ class LeftDeleteRecyclerView(context: Context, attrs: AttributeSet?) :
         val position: Int
         when (event.action) {
             MotionEvent.ACTION_DOWN -> {
-                Log.d("123", "down")
             }
             MotionEvent.ACTION_MOVE -> {
                 //恢复上一次侧滑的ITEM
-                Log.d("123", "move")
                 if (itemRootLast != null && deleteState1 == 1 && deleteState2 == 1) {
-                    Log.d("123", "恢复")
                     itemRootLast!!.scrollTo(0, 0)
                     itemRootLast = null
                     invalidate()
                     deleteState1 = 0
                     deleteState2 = 0
                 }
-                //根据点击的坐标获取那个Item被点击了
+                //根据点击的坐标获取Item
                 val view = findChildViewUnder(x.toFloat(), y.toFloat()) ?: return false
                 val viewHolder: LeftDeleteAdapter.ViewHolder =
                     getChildViewHolder(view) as LeftDeleteAdapter.ViewHolder
                 itemRoot = viewHolder.cardView.parent as ConstraintLayout?
-                if(itemRoot == null) return false;
+                if(itemRoot == null) return false
                 itemRootLast = itemRoot
                 position = viewHolder.adapterPosition
                 if (mOnItemClickListener != null) {
@@ -77,8 +69,7 @@ class LeftDeleteRecyclerView(context: Context, attrs: AttributeSet?) :
                 }
                 // 滑出delete
                 if (deleteState2 == 0 && abs(mlastX - x) > 0
-                    && abs(mlastX -x) > abs(mlastY-y)
-                ) {
+                    && abs(mlastX -x) > abs(mlastY-y)) {
                     val scrollX = itemRoot!!.scrollX
                     var newScrollX = scrollX + mlastX - x
                     if (newScrollX < 0) {
@@ -91,13 +82,11 @@ class LeftDeleteRecyclerView(context: Context, attrs: AttributeSet?) :
                 }
             }
             MotionEvent.ACTION_UP -> {
-                Log.d("123", "up")
                 val scrollX = itemRoot!!.scrollX
                 val newScrollX: Int
                 if (scrollX > maxLength / 2) {
                     newScrollX = maxLength - 50
-                    if(deleteState1 == 1)
-                        deleteState2 = 1
+                    if(deleteState1 == 1) deleteState2 = 1
                 } else {
                     newScrollX = 0
                 }

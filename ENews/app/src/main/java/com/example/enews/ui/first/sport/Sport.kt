@@ -40,7 +40,7 @@ class sport : Fragment() {
     ): View {
         _binding = FragmentEntertainmentBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this).get(SportViewModel::class.java)
-
+        viewModel.getContent()
         viewModel.data.observe(viewLifecycleOwner){
             val recyclerList = viewModel.data.value?.T1348649079062
             val bannerList = viewModel.data.value?.T1348649079062?.subList(0, 5)

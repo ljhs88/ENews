@@ -38,7 +38,7 @@ class entertainment() : Fragment() {
     ): View {
         _binding = FragmentEntertainmentBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this).get(EntertainmentViewModel::class.java)
-
+        viewModel.getContent()
         viewModel.data.observe(viewLifecycleOwner) {
             val recyclerList = viewModel.data.value?.T1348648517839
             val bannerList = viewModel.data.value?.T1348648517839?.subList(0, 5)

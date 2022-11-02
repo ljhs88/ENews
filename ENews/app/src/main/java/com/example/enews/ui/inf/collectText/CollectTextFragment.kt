@@ -37,7 +37,7 @@ class CollectTextFragment : Fragment(), LeftDeleteRecyclerView.OnItemClickListen
         _binding = FragmentCollectTextBinding.inflate(inflater, container, false)
         //viewModel = ViewModelProvider(this)[collectTextViewModel::class.java]
 
-         list = getDataList(requireContext(), "collectList") as MutableList<CollectTextBean2>
+        list = getDataList(requireContext(), "collectList") as MutableList<CollectTextBean2>
         if (list.isNotEmpty()) {
             binding.text.visibility = View.GONE
             setRecyclerView(list)

@@ -27,17 +27,17 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         // 滑动时同步
+        binding.viewPager2.offscreenPageLimit = 2
         binding.viewPager2.adapter = object : FragmentStateAdapter(this) {
             override fun getItemCount() = 6
 
-            override fun createFragment(position: Int)=
+            override fun createFragment(position: Int) =
                 when(position) {
                     0 -> headLine()
                     1 -> entertainment()

@@ -13,6 +13,7 @@ import com.example.enews.bean.FE.BA8EE5GMwangning
 import com.example.enews.bean.MS.BAI67OGGwangning
 import com.example.enews.databinding.FragmentMilitaryScienceBinding
 import com.example.enews.ui.first.FE.FEAdapter
+import kotlin.concurrent.thread
 
 class militaryScience : Fragment() {
 
@@ -31,7 +32,9 @@ class militaryScience : Fragment() {
     ): View {
         _binding = FragmentMilitaryScienceBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this).get(MilitaryScienceViewModel::class.java)
-
+        thread {
+            viewModel.getContent()
+        }
         viewModel.data.observe(viewLifecycleOwner) {
             val recyclerList = viewModel.data.value?.BAI67OGGwangning
             setRecyclerView(recyclerList)
